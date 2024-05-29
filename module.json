@@ -2,7 +2,7 @@
   "name": "WHMCS Module",
   "alias": "ljpcwhmcsmodule",
   "description": "This module connects WHMCS to Freescout allowing you to view client details and tickets from within Freescout!",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "detailsUrl": "",
   "author": "LJPc solutions",
   "authorUrl": "https://ljpc.solutions",

@@ -112,10 +112,28 @@ class LJPcWHMCSModuleController extends Controller {
 				] );
 
 				if ( ! $response || ! isset( $response['clients']['client'] ) ) {
-						$customer->setMeta( 'whmcs_connection_status', 'not found' );
+						//get domain from email
+						$domain  = explode( '@', $email )[1];
+						$domains = WHMCS::instance()->getClientsDomains( [
+								'domain'   => $domain,
+								'limitnum' => 1,
+						] );
+
+						if ( ! is_array( $domains ) || count( $domains ) === 0 ) {
+								$customer->setMeta( 'whmcs_connection_status', 'not found' );
+								$customer->save();
+
+								return response()->json( [ 'success' => false, 'error' => 'No matching WHMCS client found' ] );
+						}
+
+						$userId = $domain['userid'];
+						$customer->setMeta( 'whmcs_client_id', $userId );
+						$customer->setMeta( 'whmcs_connection_status', 'connected' );
 						$customer->save();
 
-						return response()->json( [ 'success' => false, 'error' => 'No matching WHMCS client found' ] );
+						return response()->json(
+								[ 'success' => true, 'whmcs_id' => $userId, 'message' => 'WHMCS client successfully connected to the customer' ]
+						);
 				}
 
 				$clients = $response['clients']['client'];
@@ -399,13 +417,13 @@ class LJPcWHMCSModuleController extends Controller {
 						$service['url'] = $baseUrl . '/admin/clientsservices.php?userid=' . $whmcsId . '&id=' . $service['id'];
 						$service['url'] = preg_replace( '/([^:])(\/{2,})/', '$1/', $service['url'] );
 				}
-				unset($service);
+				unset( $service );
 
 				foreach ( $domains as &$domain ) {
 						$domain['url'] = $baseUrl . '/admin/clientsdomains.php?userid=' . $whmcsId . '&id=' . $domain['id'];
 						$domain['url'] = preg_replace( '/([^:])(\/{2,})/', '$1/', $domain['url'] );
 				}
-				unset($domain);
+				unset( $domain );
 
 				$response = [
 						'success'      => true,
