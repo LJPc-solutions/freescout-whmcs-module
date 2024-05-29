@@ -1,0 +1,22 @@
+{
+    "name": "WHMCS Module",
+    "alias": "ljpcwhmcsmodule",
+    "description": "",
+    "version": "1.0.0",
+    "detailsUrl": "",
+    "author": "LJPc solutions",
+    "authorUrl": "https://ljpc.solutions",
+    "requiredAppVersion": "1.8.140",
+    "license": "AGPL-3.0",
+    "keywords": [],
+    "active": 0,
+    "order": 0,
+    "providers": [
+        "Modules\\LJPcWHMCSModule\\Providers\\LJPcWHMCSModuleServiceProvider"
+    ],
+    "aliases": {},
+    "files": [
+        "start.php"
+    ],
+    "requires": []
+}

@@ -1,0 +1,25 @@
+{
+    "name": "freescout/ljpcwhmcsmodule",
+    "description": "",
+    "authors": [
+        {
+            "name": "FreeScout",
+            "email": "support@freescout.net"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Modules\\LJPcWHMCSModule\\Providers\\LJPcWHMCSModuleServiceProvider"
+            ],
+            "aliases": {
+                
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\LJPcWHMCSModule\\": ""
+        }
+    }
+}
