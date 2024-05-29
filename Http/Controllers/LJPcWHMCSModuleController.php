@@ -395,6 +395,18 @@ class LJPcWHMCSModuleController extends Controller {
 				$domainsUrl = $baseUrl . '/admin/clientsdomains.php?userid=' . $whmcsId;
 				$domainsUrl = preg_replace( '/([^:])(\/{2,})/', '$1/', $domainsUrl );
 
+				foreach ( $services as &$service ) {
+						$service['url'] = $baseUrl . '/admin/clientsservices.php?userid=' . $whmcsId . '&id=' . $service['id'];
+						$service['url'] = preg_replace( '/([^:])(\/{2,})/', '$1/', $service['url'] );
+				}
+				unset($service);
+
+				foreach ( $domains as &$domain ) {
+						$domain['url'] = $baseUrl . '/admin/clientsdomains.php?userid=' . $whmcsId . '&id=' . $domain['id'];
+						$domain['url'] = preg_replace( '/([^:])(\/{2,})/', '$1/', $domain['url'] );
+				}
+				unset($domain);
+
 				$response = [
 						'success'      => true,
 						'services'     => $services,
