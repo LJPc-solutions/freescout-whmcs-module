@@ -1,22 +1,25 @@
 {
-    "name": "WHMCS Module",
-    "alias": "ljpcwhmcsmodule",
-    "description": "",
-    "version": "1.0.0",
-    "detailsUrl": "",
-    "author": "LJPc solutions",
-    "authorUrl": "https://ljpc.solutions",
-    "requiredAppVersion": "1.8.140",
-    "license": "AGPL-3.0",
-    "keywords": [],
-    "active": 0,
-    "order": 0,
-    "providers": [
-        "Modules\\LJPcWHMCSModule\\Providers\\LJPcWHMCSModuleServiceProvider"
-    ],
-    "aliases": {},
-    "files": [
-        "start.php"
-    ],
-    "requires": []
+  "name": "WHMCS Module",
+  "alias": "ljpcwhmcsmodule",
+  "description": "This module connects WHMCS to Freescout allowing you to view client details and tickets from within Freescout!",
+  "version": "1.0.1",
+  "detailsUrl": "",
+  "author": "LJPc solutions",
+  "authorUrl": "https://ljpc.solutions",
+  "requiredAppVersion": "1.8.140",
+  "license": "AGPL-3.0",
+  "keywords": [],
+  "active": 0,
+  "order": 0,
+  "providers": [
+    "Modules\\LJPcWHMCSModule\\Providers\\LJPcWHMCSModuleServiceProvider"
+  ],
+  "aliases": {},
+  "files": [
+    "start.php"
+  ],
+  "requires": [],
+  "img": "https://resources.ljpc.network/freescout-modules/whmcs/module.svg",
+  "latestVersionUrl": "https://resources.ljpc.network/freescout-modules/whmcs/version.txt",
+  "latestVersionZipUrl": "https://resources.ljpc.network/freescout-modules/whmcs/latest.zip"
 }
