@@ -203,7 +203,7 @@ $(document).ready(function () {
                 } else {
                     data.invoices.forEach(function (invoice) {
                         const li = $('<li class="list-group-item list-group-item-action" data-invoice-id="' + invoice.id + '" data-invoice-url="' + invoice.url + '" title="' + invoice.status + '"></li>');
-                        const statusIndicator = '<span class="invoice-status-indicator ' + invoice.status.toLowerCase() + '"></span>';
+                        const statusIndicator = '<span class="invoice-status-indicator ' + invoice.raw_status.toLowerCase() + '"></span>';
                         li.html(statusIndicator + invoice.invoice_num + ' - ' + invoice.amount);
                         ul.append(li);
                     });
@@ -270,8 +270,10 @@ $(document).ready(function () {
         });
     }
 
-    $('body').on('click', '[data-invoice-url]', function () {
-        window.open($(this).data('invoice-url'), '_blank');
+    $('body').on('click', '[data-domain-url]', function () {
+        window.open($(this).data('domain-url'), '_blank');
+    }).on('click', '[data-service-url]', function () {
+        window.open($(this).data('service-url'), '_blank');
     });
 
     /**
