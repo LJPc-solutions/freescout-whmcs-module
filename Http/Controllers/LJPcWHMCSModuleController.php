@@ -126,7 +126,7 @@ class LJPcWHMCSModuleController extends Controller {
 								return response()->json( [ 'success' => false, 'error' => 'No matching WHMCS client found' ] );
 						}
 
-						$userId = $domain['userid'];
+						$userId = $domains[0]['userid'];
 						$customer->setMeta( 'whmcs_client_id', $userId );
 						$customer->setMeta( 'whmcs_connection_status', 'connected' );
 						$customer->save();
