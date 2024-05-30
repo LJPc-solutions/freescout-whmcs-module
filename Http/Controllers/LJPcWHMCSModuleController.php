@@ -568,9 +568,12 @@ class LJPcWHMCSModuleController extends Controller {
 				} );
 				$emails = array_slice( $emails, 0, 5 );
 				foreach ( $emails as $email ) {
+						$mailUrl          = Option::get( 'whmcs_base_url' ) . '/admin/clientsemails.php?userid=' . $whmcsId . '&showMail=' . $email['id'];
+						$mailUrl          = preg_replace( '/([^:])(\/{2,})/', '$1/', $mailUrl );
 						$sanitizeEmails[] = [
 								'id'      => $email['id'],
 								'subject' => $email['subject'],
+								'url'     => $mailUrl,
 						];
 				}
 

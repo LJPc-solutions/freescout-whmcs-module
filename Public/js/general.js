@@ -305,6 +305,10 @@ $(document).ready(function () {
         });
     }
 
+    $('body').on('click', '[data-email-url]', function () {
+        window.open($(this).data('email-url'), '_blank');
+    });
+
     /**
      * Services and domains
      */

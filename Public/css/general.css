@@ -10,6 +10,7 @@
 #whmcs-module__manual-connect-results .list-group-item,
 #whmcs-module__invoices-list .list-group-item,
 #whmcs-module__tickets-list .list-group-item,
+#whmcs-module__emails-list .list-group-item,
 #whmcs-module__services-list .list-group-item {
     cursor: pointer;
 }
@@ -17,6 +18,7 @@
 #whmcs-module__manual-connect-results .list-group-item:hover,
 #whmcs-module__invoices-list .list-group-item:hover,
 #whmcs-module__tickets-list .list-group-item:hover,
+#whmcs-module__emails-list .list-group-item:hover,
 #whmcs-module__services-list .list-group-item:hover {
     background-color: #f5f5f5;
 }
