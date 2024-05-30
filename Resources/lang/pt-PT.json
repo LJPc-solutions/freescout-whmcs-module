@@ -45,5 +45,11 @@
   "Details": "Detalhes",
   "Please note that the WHMCS API must be enabled in your WHMCS installation. To enable the API, log in to your WHMCS admin area, navigate to Setup > Staff Management > Manage API Credentials, and create a new API credential.": "Por favor, note que a API do WHMCS deve estar ativada na sua instalação do WHMCS. Para ativar a API, inicie sessão na sua área de administração do WHMCS, navegue para Configuração > Gestão de Pessoal > Gerir Credenciais API e crie uma nova credencial API.",
   "This module, developed by :solutions, integrates WHMCS with Freescout. It allows you to connect customers between the two systems, view customer details, invoices, services, and domains from WHMCS directly in your application. The module also provides functionality to log in as a client in WHMCS and navigate to the client's page in the WHMCS admin area.": "Este módulo, desenvolvido por :solutions, integra o WHMCS com o Freescout. Permite-lhe conectar clientes entre os dois sistemas, ver detalhes de clientes, faturas, serviços e domínios do WHMCS diretamente na sua aplicação. O módulo também fornece funcionalidade para iniciar sessão como cliente no WHMCS e navegar para a página do cliente na área de administração do WHMCS.",
-  "To set up the integration, please provide your WHMCS base URL, API identifier, and API secret in the fields below.": "Para configurar a integração, por favor forneça o seu URL base do WHMCS, identificador da API e segredo da API nos campos abaixo."
+  "To set up the integration, please provide your WHMCS base URL, API identifier, and API secret in the fields below.": "Para configurar a integração, por favor forneça o seu URL base do WHMCS, identificador da API e segredo da API nos campos abaixo.",
+  "Tickets": "Tickets",
+  "Emails": "E-mails",
+  "No tickets found": "Nenhum ticket encontrado",
+  "No emails found": "Nenhum e-mail encontrado",
+  "View all tickets": "Ver todos os tickets",
+  "View all emails": "Ver todos os e-mails"
 }

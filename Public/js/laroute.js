@@ -35,6 +35,14 @@
     {
         "uri": "whmcs\/api\/get-client-details",
         "name": "whmcs.api.get-client-details"
+    },
+    {
+        "uri": "whmcs\/api\/get-tickets",
+        "name": "whmcs.api.get-tickets"
+    },
+    {
+        "uri": "whmcs\/api\/get-emails",
+        "name": "whmcs.api.get-emails"
     }
 ];
 

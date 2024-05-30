@@ -1,5 +1,7 @@
 #whmcs-module__manual-connect-results,
 #whmcs-module__invoices-list,
+#whmcs-module__tickets-list,
+#whmcs-module__emails-list,
 #whmcs-module__services-list {
     margin-top: 5px;
     margin-bottom: 2px;
@@ -7,24 +9,30 @@
 
 #whmcs-module__manual-connect-results .list-group-item,
 #whmcs-module__invoices-list .list-group-item,
+#whmcs-module__tickets-list .list-group-item,
 #whmcs-module__services-list .list-group-item {
     cursor: pointer;
 }
 
 #whmcs-module__manual-connect-results .list-group-item:hover,
 #whmcs-module__invoices-list .list-group-item:hover,
+#whmcs-module__tickets-list .list-group-item:hover,
 #whmcs-module__services-list .list-group-item:hover {
     background-color: #f5f5f5;
 }
 
 #whmcs-module__manual-connect-results .list-group-item:not(.list-group-item-action),
 #whmcs-module__invoices-list .list-group-item:not(.list-group-item-action),
+#whmcs-module__tickets-list .list-group-item:not(.list-group-item-action),
+#whmcs-module__emails-list .list-group-item:not(.list-group-item-action),
 #whmcs-module__services-list .list-group-item:not(.list-group-item-action) {
     cursor: default;
 }
 
 #whmcs-module__manual-connect-results .list-group-item:not(.list-group-item-action):hover,
 #whmcs-module__invoices-list .list-group-item:not(.list-group-item-action):hover,
+#whmcs-module__tickets-list .list-group-item:not(.list-group-item-action):hover,
+#whmcs-module__emails-list .list-group-item:not(.list-group-item-action):hover,
 #whmcs-module__services-list .list-group-item:not(.list-group-item-action):hover {
     background-color: #fff;
 }

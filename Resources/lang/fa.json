@@ -45,5 +45,11 @@
   "Details": "جزئیات",
   "Please note that the WHMCS API must be enabled in your WHMCS installation. To enable the API, log in to your WHMCS admin area, navigate to Setup > Staff Management > Manage API Credentials, and create a new API credential.": "لطفاً توجه داشته باشید که API WHMCS باید در نصب WHMCS شما فعال باشد. برای فعال کردن API، به ناحیه مدیریت WHMCS خود وارد شوید، به Setup > Staff Management > Manage API Credentials بروید و یک اعتبار API جدید ایجاد کنید.",
   "This module, developed by :solutions, integrates WHMCS with Freescout. It allows you to connect customers between the two systems, view customer details, invoices, services, and domains from WHMCS directly in your application. The module also provides functionality to log in as a client in WHMCS and navigate to the client's page in the WHMCS admin area.": "این ماژول، که توسط :solutions توسعه یافته است، WHMCS را با Freescout ادغام می کند. به شما امکان می دهد مشتریان را بین دو سیستم متصل کنید، جزئیات مشتری، فاکتورها، خدمات و دامنه ها را از WHMCS مستقیماً در برنامه خود مشاهده کنید. این ماژول همچنین عملکردی را برای ورود به سیستم به عنوان یک مشتری در WHMCS و هدایت به صفحه مشتری در ناحیه مدیریت WHMCS فراهم می کند.",
-  "To set up the integration, please provide your WHMCS base URL, API identifier, and API secret in the fields below.": "برای راه اندازی ادغام، لطفاً URL پایه WHMCS، شناسه API و رمز API خود را در فیلدهای زیر ارائه دهید."
+  "To set up the integration, please provide your WHMCS base URL, API identifier, and API secret in the fields below.": "برای راه اندازی ادغام، لطفاً URL پایه WHMCS، شناسه API و رمز API خود را در فیلدهای زیر ارائه دهید.",
+  "Tickets": "تیکت‌ها",
+  "Emails": "ایمیل‌ها",
+  "No tickets found": "هیچ تیکتی یافت نشد",
+  "No emails found": "هیچ ایمیلی یافت نشد",
+  "View all tickets": "مشاهده همه تیکت‌ها",
+  "View all emails": "مشاهده همه ایمیل‌ها"
 }

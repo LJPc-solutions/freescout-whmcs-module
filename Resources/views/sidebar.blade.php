@@ -58,6 +58,44 @@
     </div>
 </div>
 
+<div class="conv-sidebar-block hidden" id="whmcs-module__tickets">
+    <div class="panel-group accordion accordion-empty">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" href=".collapse-conv-whmcs-tickets">{{__('Tickets')}}
+                        <b class="caret"></b>
+                    </a>
+                </h4>
+            </div>
+            <div class="collapse-conv-whmcs-tickets panel-collapse collapse in">
+                <div class="panel-body" style="padding-top:5px;">
+                    @include('ljpcwhmcsmodule::partials.tickets')
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="conv-sidebar-block hidden" id="whmcs-module__emails">
+    <div class="panel-group accordion accordion-empty">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" href=".collapse-conv-whmcs-emails">{{__('Emails')}}
+                        <b class="caret"></b>
+                    </a>
+                </h4>
+            </div>
+            <div class="collapse-conv-whmcs-emails panel-collapse collapse in">
+                <div class="panel-body" style="padding-top:5px;">
+                    @include('ljpcwhmcsmodule::partials.emails')
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 <script {!! \Helper::cspNonceAttr() !!}>
     window.ljpcwhmcsmodule = {

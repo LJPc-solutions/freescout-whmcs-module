@@ -45,5 +45,11 @@
   "Details": "세부 정보",
   "Please note that the WHMCS API must be enabled in your WHMCS installation. To enable the API, log in to your WHMCS admin area, navigate to Setup > Staff Management > Manage API Credentials, and create a new API credential.": "WHMCS 설치에서 WHMCS API를 활성화해야 합니다. API를 활성화하려면 WHMCS 관리자 영역에 로그인하여 설정 > 직원 관리 > API 자격 증명 관리로 이동하고 새 API 자격 증명을 만드십시오.",
   "This module, developed by :solutions, integrates WHMCS with Freescout. It allows you to connect customers between the two systems, view customer details, invoices, services, and domains from WHMCS directly in your application. The module also provides functionality to log in as a client in WHMCS and navigate to the client's page in the WHMCS admin area.": "이 모듈은 :solutions에서 개발했으며 WHMCS와 Freescout를 통합합니다. 이를 통해 두 시스템 간에 고객을 연결하고 응용 프로그램에서 직접 WHMCS의 고객 세부 정보, 청구서, 서비스 및 도메인을 볼 수 있습니다. 또한 이 모듈은 WHMCS에서 클라이언트로 로그인하고 WHMCS 관리자 영역의 클라이언트 페이지로 이동하는 기능도 제공합니다.",
-  "To set up the integration, please provide your WHMCS base URL, API identifier, and API secret in the fields below.": "통합을 설정하려면 아래 필드에 WHMCS 기본 URL, API 식별자 및 API 비밀키를 입력하십시오."
+  "To set up the integration, please provide your WHMCS base URL, API identifier, and API secret in the fields below.": "통합을 설정하려면 아래 필드에 WHMCS 기본 URL, API 식별자 및 API 비밀키를 입력하십시오.",
+  "Tickets": "티켓",
+  "Emails": "이메일",
+  "No tickets found": "티켓을 찾을 수 없음",
+  "No emails found": "이메일을 찾을 수 없음",
+  "View all tickets": "모든 티켓 보기",
+  "View all emails": "모든 이메일 보기"
 }

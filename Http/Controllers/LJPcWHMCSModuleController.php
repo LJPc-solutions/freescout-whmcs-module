@@ -484,4 +484,109 @@ class LJPcWHMCSModuleController extends Controller {
 
 				return response()->json( $response );
 		}
+
+		public function getTickets( Request $request ) {
+				$validator = Validator::make( $request->all(), [
+						'customer_id' => 'required|int',
+				] );
+
+				if ( $validator->fails() ) {
+						return response()->json( [ 'success' => false, 'error' => 'Invalid request' ] );
+				}
+
+				$customer = Customer::find( $request->input( 'customer_id' ) );
+				if ( ! $customer ) {
+						return response()->json( [ 'success' => false, 'error' => 'Customer not found' ] );
+				}
+
+				$whmcsId = $customer->getMeta( 'whmcs_client_id' );
+				if ( ! $whmcsId ) {
+						return response()->json( [ 'success' => false, 'error' => 'Client not connected' ] );
+				}
+
+				$cacheKey       = 'whmcs-tickets:' . $whmcsId;
+				$cachedResponse = Cache::get( $cacheKey );
+
+				if ( $cachedResponse ) {
+						return response()->json( $cachedResponse );
+				}
+
+				$tickets = WHMCS::instance()->getTickets( [ 'clientid' => $whmcsId, 'limitnum' => 5, 'ignore_dept_assignments' => 'true' ] );
+
+				foreach ( $tickets as &$ticket ) {
+						$ticketUrl     = Option::get( 'whmcs_base_url' ) . '/admin/supporttickets.php?action=view&id=' . $ticket['id'];
+						$ticket['url'] = preg_replace( '/([^:])(\/{2,})/', '$1/', $ticketUrl );
+				}
+				unset( $ticket );
+
+				$url = Option::get( 'whmcs_base_url' ) . '/admin/client/' . $whmcsId . '/tickets';
+				$url = preg_replace( '/([^:])(\/{2,})/', '$1/', $url );
+
+				$response = [
+						'success'     => true,
+						'tickets'     => $tickets,
+						'url'         => $url,
+						'last_update' => now()->format( DATE_ATOM ),
+				];
+
+				Cache::put( $cacheKey, $response, now()->addHours( 3 ) );
+
+				return response()->json( $response );
+
+		}
+
+		public function getEmails( Request $request ) {
+				$validator = Validator::make( $request->all(), [
+						'customer_id' => 'required|int',
+				] );
+
+				if ( $validator->fails() ) {
+						return response()->json( [ 'success' => false, 'error' => 'Invalid request' ] );
+				}
+
+				$customer = Customer::find( $request->input( 'customer_id' ) );
+				if ( ! $customer ) {
+						return response()->json( [ 'success' => false, 'error' => 'Customer not found' ] );
+				}
+
+				$whmcsId = $customer->getMeta( 'whmcs_client_id' );
+				if ( ! $whmcsId ) {
+						return response()->json( [ 'success' => false, 'error' => 'Client not connected' ] );
+				}
+
+				$cacheKey       = 'whmcs-emails:' . $whmcsId;
+				$cachedResponse = Cache::get( $cacheKey );
+
+				if ( $cachedResponse ) {
+						return response()->json( $cachedResponse );
+				}
+
+				$emails = WHMCS::instance()->getEmails( [ 'clientid' => $whmcsId, 'limitnum' => 5 ], false );
+
+				usort( $emails, function ( $a, $b ) {
+						return $b['id'] <=> $a['id'];
+				} );
+				$emails = array_slice( $emails, 0, 5 );
+				foreach ( $emails as $email ) {
+						$sanitizeEmails[] = [
+								'id'      => $email['id'],
+								'subject' => $email['subject'],
+						];
+				}
+
+				$url = Option::get( 'whmcs_base_url' ) . '/admin/clientsemails.php?userid=' . $whmcsId;
+				$url = preg_replace( '/([^:])(\/{2,})/', '$1/', $url );
+
+				$response = [
+						'success'     => true,
+						'emails'      => $sanitizeEmails,
+						'url'         => $url,
+						'last_update' => now()->format( DATE_ATOM ),
+				];
+
+				Cache::put( $cacheKey, $response, now()->addHours( 3 ) );
+
+				return response()->json( $response );
+
+		}
 }

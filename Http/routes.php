@@ -59,4 +59,16 @@ Route::group( [ 'middleware' => 'web', 'prefix' => \Helper::getSubdirectory(), '
 				'laroute'    => true,
 		] )->name( 'whmcs.api.get-client-details' );
 
+		Route::get( '/whmcs/api/get-tickets', [
+				'uses'       => 'LJPcWHMCSModuleController@getTickets',
+				'middleware' => $middleWare,
+				'laroute'    => true,
+		] )->name( 'whmcs.api.get-tickets' );
+
+		Route::get( '/whmcs/api/get-emails', [
+				'uses'       => 'LJPcWHMCSModuleController@getEmails',
+				'middleware' => $middleWare,
+				'laroute'    => true,
+		] )->name( 'whmcs.api.get-emails' );
+
 } );

@@ -108,6 +108,30 @@ class WHMCS {
 				return null;
 		}
 
+		public function getTickets( array $params = [] ): ?array {
+				$response = $this->call( 'GetTickets', $params );
+
+				if ( $response !== null && $response['result'] === 'success' ) {
+						return $response['tickets']['ticket'] ?? [];
+				}
+
+				return null;
+		}
+
+		public function getEmails( array $params = [], bool $raw = false ): ?array {
+				$response = $this->call( 'GetEmails', $params );
+
+				if ( $response !== null && $response['result'] === 'success' ) {
+						if ( $raw ) {
+								return $response;
+						}
+
+						return $response['emails']['email'] ?? [];
+				}
+
+				return null;
+		}
+
 		public function getClientDetails( array $params = [] ): ?array {
 				$response = $this->call( 'GetClientsDetails', $params );
 

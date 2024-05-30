@@ -45,5 +45,11 @@
   "Details": "Podrobnosti",
   "Please note that the WHMCS API must be enabled in your WHMCS installation. To enable the API, log in to your WHMCS admin area, navigate to Setup > Staff Management > Manage API Credentials, and create a new API credential.": "Upozorňujeme, že v inštalácii WHMCS musí byť povolené API WHMCS. Ak chcete povoliť API, prihláste sa do administratívnej oblasti WHMCS, prejdite na Nastavenie > Správa personálu > Spravovať poverenia API a vytvorte nové poverenie API.",
   "This module, developed by :solutions, integrates WHMCS with Freescout. It allows you to connect customers between the two systems, view customer details, invoices, services, and domains from WHMCS directly in your application. The module also provides functionality to log in as a client in WHMCS and navigate to the client's page in the WHMCS admin area.": "Tento modul, vyvinutý spoločnosťou :solutions, integruje WHMCS s Freescout. Umožňuje prepájať zákazníkov medzi týmito dvoma systémami, zobrazovať podrobnosti o zákazníkoch, faktúrach, službách a doménach z WHMCS priamo vo vašej aplikácii. Modul tiež poskytuje funkcionalitu na prihlásenie sa ako klient vo WHMCS a navigáciu na stránku klienta v administratívnej časti WHMCS.",
-  "To set up the integration, please provide your WHMCS base URL, API identifier, and API secret in the fields below.": "Ak chcete nastaviť integráciu, zadajte svoju základnú URL adresu WHMCS, identifikátor API a API tajomstvo do polí nižšie."
+  "To set up the integration, please provide your WHMCS base URL, API identifier, and API secret in the fields below.": "Ak chcete nastaviť integráciu, zadajte svoju základnú URL adresu WHMCS, identifikátor API a API tajomstvo do polí nižšie.",
+  "Tickets": "Tikety",
+  "Emails": "E-maily",
+  "No tickets found": "Neboli nájdené žiadne tikety",
+  "No emails found": "Neboli nájdené žiadne e-maily",
+  "View all tickets": "Zobraziť všetky tikety",
+  "View all emails": "Zobraziť všetky e-maily"
 }

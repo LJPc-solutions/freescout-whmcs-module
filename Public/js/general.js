@@ -15,6 +15,8 @@ $(document).ready(function () {
         loadInvoices();
         loadServicesAndDomains();
         loadClientDetails();
+        loadTickets();
+        loadEmails();
     }
 
     const autoConnect = () => {
@@ -26,6 +28,8 @@ $(document).ready(function () {
                 $('#whmcs-module__connected').removeClass('hidden');
                 $('#whmcs-module__invoices').removeClass('hidden');
                 $('#whmcs-module__services').removeClass('hidden');
+                $('#whmcs-module__tickets').removeClass('hidden');
+                $('#whmcs-module__emails').removeClass('hidden');
                 window.ljpcwhmcsmodule.whmcs.customer_connection = 'connected';
                 loadData();
             } else {
@@ -108,6 +112,8 @@ $(document).ready(function () {
                 $('#whmcs-module__connected').addClass('hidden');
                 $('#whmcs-module__invoices').addClass('hidden');
                 $('#whmcs-module__services').addClass('hidden');
+                $('#whmcs-module__tickets').addClass('hidden');
+                $('#whmcs-module__emails').addClass('hidden');
                 $('#whmcs-module__manual-connect').removeClass('hidden');
                 window.ljpcwhmcsmodule.whmcs.id = null;
                 window.ljpcwhmcsmodule.whmcs.customer_connection = 'not found';
@@ -220,6 +226,86 @@ $(document).ready(function () {
     });
 
     /**
+     * Tickets
+     */
+    const loadTickets = () => {
+        const loadingIndicator = $('#whmcs-module__tickets .loading');
+        const loadedIndicator = $('#whmcs-module__tickets .loaded');
+
+        loadingIndicator.removeClass('hidden');
+        loadedIndicator.addClass('hidden');
+        const url = laroute.route('whmcs.api.get-tickets');
+        $.get(url, {customer_id: window.ljpcwhmcsmodule.customer_id, _token: window.ljpcwhmcsmodule.csrf}, function (data) {
+            if (data.success) {
+                const lastUpdate = new Date(data.last_update);
+                $('#whmcs-module__tickets-last-update').html(lastUpdate.toLocaleDateString() + ' ' + lastUpdate.toLocaleTimeString());
+
+                $('#whmcs-module__tickets-show-all').attr('href', data.url);
+
+                const ul = $('#whmcs-module__tickets-list');
+                ul.empty();
+
+                if (data.tickets.length === 0) {
+                    const li = $('<li class="list-group-item text-muted"></li>');
+                    li.text(Lang.get('messages.whmcs_no_tickets_found'));
+                    ul.append(li);
+                } else {
+                    data.tickets.forEach(function (ticket) {
+                        const li = $('<li class="list-group-item list-group-item-action" data-ticket-id="' + ticket.id + '" data-ticket-url="' + ticket.url + '" title="' + ticket.status + '"></li>');
+                        li.html('#' + ticket.tid + ' - ' + ticket.subject);
+                        ul.append(li);
+                    });
+                }
+
+                loadingIndicator.addClass('hidden');
+                loadedIndicator.removeClass('hidden');
+            }
+        });
+    }
+
+    $('body').on('click', '[data-ticket-url]', function () {
+        window.open($(this).data('ticket-url'), '_blank');
+    });
+
+    /**
+     * Emails
+     */
+    const loadEmails = () => {
+        const loadingIndicator = $('#whmcs-module__emails .loading');
+        const loadedIndicator = $('#whmcs-module__emails .loaded');
+
+        loadingIndicator.removeClass('hidden');
+        loadedIndicator.addClass('hidden');
+        const url = laroute.route('whmcs.api.get-emails');
+        $.get(url, {customer_id: window.ljpcwhmcsmodule.customer_id, _token: window.ljpcwhmcsmodule.csrf}, function (data) {
+            if (data.success) {
+                const lastUpdate = new Date(data.last_update);
+                $('#whmcs-module__emails-last-update').html(lastUpdate.toLocaleDateString() + ' ' + lastUpdate.toLocaleTimeString());
+
+                $('#whmcs-module__emails-show-all').attr('href', data.url);
+
+                const ul = $('#whmcs-module__emails-list');
+                ul.empty();
+
+                if (data.emails.length === 0) {
+                    const li = $('<li class="list-group-item text-muted"></li>');
+                    li.text(Lang.get('messages.whmcs_no_emails_found'));
+                    ul.append(li);
+                } else {
+                    data.emails.forEach(function (email) {
+                        const li = $('<li class="list-group-item list-group-item-action" data-email-id="' + email.id + '" data-email-url="' + email.url + '" title="' + email.status + '"></li>');
+                        li.html(email.subject);
+                        ul.append(li);
+                    });
+                }
+
+                loadingIndicator.addClass('hidden');
+                loadedIndicator.removeClass('hidden');
+            }
+        });
+    }
+
+    /**
      * Services and domains
      */
     const loadServicesAndDomains = () => {
@@ -284,6 +370,8 @@ $(document).ready(function () {
         $('#whmcs-module__connected').removeClass('hidden');
         $('#whmcs-module__invoices').removeClass('hidden');
         $('#whmcs-module__services').removeClass('hidden');
+        $('#whmcs-module__tickets').removeClass('hidden');
+        $('#whmcs-module__emails').removeClass('hidden');
         loadData();
     } else if (window.ljpcwhmcsmodule.whmcs.customer_connection === 'not found') {
         $('#whmcs-module__loading').addClass('hidden');

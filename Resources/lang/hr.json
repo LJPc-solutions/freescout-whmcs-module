@@ -45,5 +45,11 @@
   "Details": "Detalji",
   "Please note that the WHMCS API must be enabled in your WHMCS installation. To enable the API, log in to your WHMCS admin area, navigate to Setup > Staff Management > Manage API Credentials, and create a new API credential.": "Imajte na umu da WHMCS API mora biti omogućen u vašoj WHMCS instalaciji. Da biste omogućili API, prijavite se u svoje WHMCS administratorsko područje, idite na Postavke > Upravljanje osobljem > Upravljanje API akreditivima i stvorite novi API akreditiv.",
   "This module, developed by :solutions, integrates WHMCS with Freescout. It allows you to connect customers between the two systems, view customer details, invoices, services, and domains from WHMCS directly in your application. The module also provides functionality to log in as a client in WHMCS and navigate to the client's page in the WHMCS admin area.": "Ovaj modul, koji je razvio :solutions, integrira WHMCS s Freescoutom. Omogućuje vam povezivanje korisnika između dva sustava, pregled pojedinosti o korisniku, računa, usluga i domena iz WHMCS-a izravno u vašoj aplikaciji. Modul također pruža funkcionalnost prijave kao klijent u WHMCS-u i navigaciju do stranice klijenta u WHMCS administratorskom području.",
-  "To set up the integration, please provide your WHMCS base URL, API identifier, and API secret in the fields below.": "Da biste postavili integraciju, navedite svoj WHMCS osnovni URL, API identifikator i API tajnu u donjim poljima."
+  "To set up the integration, please provide your WHMCS base URL, API identifier, and API secret in the fields below.": "Da biste postavili integraciju, navedite svoj WHMCS osnovni URL, API identifikator i API tajnu u donjim poljima.",
+  "Tickets": "Tiketi",
+  "Emails": "E-mailovi",
+  "No tickets found": "Nisu pronađeni tiketi",
+  "No emails found": "Nisu pronađeni e-mailovi",
+  "View all tickets": "Prikaži sve tikete",
+  "View all emails": "Prikaži sve e-mailove"
 }

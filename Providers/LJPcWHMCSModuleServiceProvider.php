@@ -127,6 +127,7 @@ class LJPcWHMCSModuleServiceProvider extends ServiceProvider {
 		 * Decrypt a setting value.
 		 *
 		 * @param string $key
+		 *
 		 * @return string
 		 */
 		public function decryptSetting( $key ): string {
@@ -184,6 +185,8 @@ class LJPcWHMCSModuleServiceProvider extends ServiceProvider {
             "whmcs_address": "<?php echo __( "Address" ) ?>",
             "whmcs_status": "<?php echo __( "Status" ) ?>",
             "whmcs_last_update": "<?php echo __( "Last update" ) ?>",
+            "whmcs_no_tickets_found": "<?php echo __( "No tickets found" ) ?>",
+            "whmcs_no_emails_found": "<?php echo __( "No emails found" ) ?>",
 						<?php
 				} );
 		}

@@ -45,5 +45,11 @@
   "Details": "Detaljer",
   "Please note that the WHMCS API must be enabled in your WHMCS installation. To enable the API, log in to your WHMCS admin area, navigate to Setup > Staff Management > Manage API Credentials, and create a new API credential.": "Observera att WHMCS API måste vara aktiverat i din WHMCS-installation. För att aktivera API:et, logga in på ditt WHMCS-administratörsområde, navigera till Inställningar > Personalhantering > Hantera API-uppgifter och skapa nya API-uppgifter.",
   "This module, developed by :solutions, integrates WHMCS with Freescout. It allows you to connect customers between the two systems, view customer details, invoices, services, and domains from WHMCS directly in your application. The module also provides functionality to log in as a client in WHMCS and navigate to the client's page in the WHMCS admin area.": "Denna modul, utvecklad av :solutions, integrerar WHMCS med Freescout. Den låter dig koppla kunder mellan de två systemen, visa kunddetaljer, fakturor, tjänster och domäner från WHMCS direkt i din applikation. Modulen tillhandahåller även funktionalitet för att logga in som en klient i WHMCS och navigera till klientens sida i WHMCS-administratörsområdet.",
-  "To set up the integration, please provide your WHMCS base URL, API identifier, and API secret in the fields below.": "För att konfigurera integrationen, ange din WHMCS bas-URL, API-identifierare och API-hemlighet i fälten nedan."
+  "To set up the integration, please provide your WHMCS base URL, API identifier, and API secret in the fields below.": "För att konfigurera integrationen, ange din WHMCS bas-URL, API-identifierare och API-hemlighet i fälten nedan.",
+  "Tickets": "Ärenden",
+  "Emails": "E-postmeddelanden",
+  "No tickets found": "Inga ärenden hittades",
+  "No emails found": "Inga e-postmeddelanden hittades",
+  "View all tickets": "Visa alla ärenden",
+  "View all emails": "Visa alla e-postmeddelanden"
 }
