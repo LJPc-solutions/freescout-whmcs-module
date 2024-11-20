@@ -356,7 +356,7 @@ class LJPcWHMCSModuleController extends Controller {
 								'date'        => ( new DateTimeImmutable( $invoice['date'] ) )->format( DATE_ATOM ),
 								'due_date'    => ( new DateTimeImmutable( $invoice['duedate'] ) )->format( DATE_ATOM ),
 								'amount'      => $invoice['currencyprefix'] . number_format( (float) $invoice['total'], 2, $locale['decimal_point'], $locale['thousands_sep'] ),
-								'status'      => $statuses[ $invoice['status'] ],
+								'status'      => $statuses[ $invoice['status'] ] ?? $invoice['status'],
 								'raw_status'  => $invoice['status'], // 'Paid', 'Unpaid', 'Cancelled', 'Refunded
 								'url'         => $invoiceUrl,
 						];
